@@ -41,7 +41,7 @@ streamlit.dataframe(fruityvice_normalize)  #outputs the data in the table
 #schema = "public"
 #role = "AccountAdmin"
 
-streamlit.stop()
+#streamlit.stop()
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
