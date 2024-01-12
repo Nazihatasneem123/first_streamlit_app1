@@ -31,12 +31,23 @@ streamlit.dataframe(fruityvice_normalize)  #outputs the data in the table
 
 
 #inorder to include snowflake libarary (snowflake connector python) - create a file requirements.txt and add the line snowflake-connector-python
+#go to streamlip app - settings -- secretes and then give user id password 
+#[snowflake]
+#user = "naztastrialaccount2024A1"
+#password = "Computerpwd23@"
+#account = "PEFHZIV-XM23150" 
+#warehouse = "pc_rivery_wh" 
+#database = "pc_rivery_db" 
+#schema = "public"
+#role = "AccountAdmin"
+
 import snowflake.connector
 
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
-my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+#my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+my_cur.execute("SELECT * from fruit_load_list")
 my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
