@@ -21,5 +21,5 @@ streamlit.dataframe(fruityvice_normalize)  #outputs the data in the table
 
 fruit_choice1 = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice1)
-fruityvice_response1 = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+fruityvice_response1 = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice1)
 
