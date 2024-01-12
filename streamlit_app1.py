@@ -24,4 +24,4 @@ fruit_choice1 = streamlit.text_input('What fruit would you like information abou
 streamlit.write('The user entered ', fruit_choice1)
 import requests 
 fruityvice_response1 = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice1)
-
+streamlit.dataframe(fruityvice_response1)
